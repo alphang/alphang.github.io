@@ -125,8 +125,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages (= 89)
-  jekyll (= 3.1.6)
+  github-pages
   json
   minima
 
