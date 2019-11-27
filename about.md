@@ -4,12 +4,7 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+![Photo of Alpha](/assets/brick-road-alpha.jpg)
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+Alpha is a software professional from Vancouver, Canada. He has worked as an Application Developer and a Technical Writer at companies such as IBM, Nokia, HERE Technologies, and Electronic Arts. His specialty is on API documentation, sample application guides, and publisher support tutorials. Alpha has a BSc in Computer Science with a minor in English Literature from the University of Calgary.
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
