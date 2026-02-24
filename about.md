@@ -6,5 +6,5 @@ permalink: /about/
 
 ![Photo of Alpha](/assets/brick-road-alpha.jpg)
 
-Alpha is a software professional from Vancouver, Canada. He has worked as an Application Developer and a Technical Writer at companies such as IBM, Nokia, HERE Technologies, and Electronic Arts. His specialty is on API documentation, sample application guides, and publisher support tutorials. Alpha has a BSc in Computer Science with a minor in English Literature from the University of Calgary.
+I'm a software developer and technical writer based in Vancouver, Canada. I've worked at IBM, Nokia, HERE Technologies, and Electronic Arts, with a focus on API documentation, developer guides, and publisher support tutorials. I have a BSc in Computer Science with a minor in English Literature from the University of Calgary.
 
