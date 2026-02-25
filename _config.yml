@@ -21,7 +21,6 @@ theme: jekyll-theme-minimal
 
 plugins:
   - jekyll-youtube
-  - jekyll-maps
   - jekyll-octicons
 
 exclude:
