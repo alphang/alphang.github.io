@@ -1,26 +1,64 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
 title: Alpha Ng
-description: > # this means to ignore newlines until "baseurl:"
-  Software developer and technical writer based in Vancouver, Canada.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://alphang.com" # the base hostname & protocol for your site
-github_username:  alphang
-linkedin_username: alphang
+description: Software developer and technical writer based in Vancouver, Canada.
+baseurl: ""
+url: "http://alphang.com"
+
+# Theme
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "dark"
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+permalink: pretty
 
-theme: jekyll-theme-minimal
-
+# Plugins
 plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
   - jekyll-octicons
+
+# Pagination
+paginate: 5
+paginate_path: /page:num/
+
+# Author
+author:
+  name: "Alpha Ng"
+  bio: "Software developer and technical writer based in Vancouver, Canada."
+  location: "Vancouver, Canada"
+  avatar: "/assets/brick-road-alpha.jpg"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/alphang"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/alphang"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: false
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
 exclude:
   - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
