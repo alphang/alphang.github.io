@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<article class="max-w-3xl mx-auto px-5 md:px-8 py-16">
+
+  <!-- Back link -->
+  <div class="animate-fade-in mb-10">
+    <a href="{{ site.baseurl }}/"
+       class="inline-flex items-center gap-1.5 text-sm text-slate-500
+              hover:text-slate-300 transition-colors duration-200 group">
+      <svg class="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-0.5"
+           fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+      All posts
+    </a>
+  </div>
+
+  <!-- Post header -->
+  <header class="mb-10 animate-fade-up">
+    <div class="flex flex-wrap items-center gap-2 mb-4">
+      <time class="text-xs text-slate-500" datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+      {% if page.categories.size > 0 %}
+      <span class="text-slate-700 text-xs">·</span>
+      {% for cat in page.categories limit:3 %}
+      <span class="tag">{{ cat }}</span>
+      {% endfor %}
+      {% endif %}
+    </div>
+
+    <h1 class="text-3xl md:text-4xl font-bold text-slate-50 leading-tight tracking-tight mb-7">
+      {{ page.title }}
+    </h1>
+
+    <div class="flex items-center gap-3 pt-5 border-t border-slate-800">
+      {% if site.author.avatar %}
+      <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}"
+           class="w-9 h-9 rounded-full object-cover">
+      {% endif %}
+      <div>
+        <p class="text-sm font-medium text-slate-300">{{ site.author.name }}</p>
+        <p class="text-xs text-slate-500">{{ site.author.location }}</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post content -->
+  <div class="prose-custom animate-fade-up-delay">
+    {{ content }}
+  </div>
+
+  <!-- Post footer -->
+  <footer class="mt-16 pt-8 border-t border-slate-800 animate-on-scroll">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-sm text-slate-500">
+        Published <span class="text-slate-400">{{ page.date | date: "%B %-d, %Y" }}</span>
+      </p>
+      <a href="{{ site.baseurl }}/"
+         class="inline-flex items-center gap-2 text-sm text-violet-400 hover:text-violet-300
+                border border-violet-500/25 hover:border-violet-400/50
+                px-4 py-2 rounded-lg transition-all duration-200">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        All posts
+      </a>
+    </div>
+  </footer>
+
+</article>
