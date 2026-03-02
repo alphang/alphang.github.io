@@ -1,0 +1,116 @@
+---
+layout: default
+---
+
+<div class="max-w-4xl mx-auto px-5 md:px-8">
+
+  <!-- Hero -->
+  <section class="py-16 md:py-24 animate-fade-in">
+    {% if site.author.avatar %}
+    <div class="flex items-center gap-3 mb-7">
+      <img src="{{ site.author.avatar }}" alt="{{ site.author.name }}"
+           class="w-11 h-11 rounded-full object-cover ring-2 ring-violet-500/40 ring-offset-2 ring-offset-slate-900">
+      <div>
+        <p class="text-[0.7rem] uppercase tracking-widest text-slate-500 font-medium">Author</p>
+        <p class="text-sm text-slate-300 font-medium">{{ site.author.name }}</p>
+      </div>
+    </div>
+    {% endif %}
+
+    <h1 class="text-4xl md:text-5xl font-bold leading-[1.15] tracking-tight mb-5">
+      <span class="gradient-text">Software developer</span><br>
+      <span class="text-slate-100">&amp; technical writer.</span>
+    </h1>
+    <p class="text-slate-400 text-lg max-w-md leading-relaxed">
+      {{ site.description }}
+    </p>
+  </section>
+
+  <!-- Posts -->
+  <section class="pb-24">
+    <h2 class="flex items-center gap-4 text-[0.7rem] font-semibold uppercase tracking-widest text-slate-500 mb-8">
+      Latest Posts
+      <span class="flex-1 h-px bg-slate-800"></span>
+    </h2>
+
+    {% if paginator.posts.size > 0 %}
+    <div class="space-y-4">
+      {% for post in paginator.posts %}
+      <article class="card animate-on-scroll group"
+               onclick="window.location='{{ post.url | prepend: site.baseurl }}'">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-x-2 gap-y-1 mb-2.5">
+              <time class="text-xs text-slate-500" datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%b %-d, %Y" }}
+              </time>
+              {% if post.categories.size > 0 %}
+              <span class="text-slate-700 text-xs">·</span>
+              {% for cat in post.categories limit:2 %}
+              <span class="tag">{{ cat }}</span>
+              {% endfor %}
+              {% endif %}
+            </div>
+
+            <h3 class="text-base md:text-lg font-semibold text-slate-100 mb-2
+                       group-hover:text-violet-300 transition-colors duration-200">
+              {{ post.title }}
+            </h3>
+
+            {% if post.excerpt %}
+            <p class="text-sm text-slate-500 leading-relaxed line-clamp-2">
+              {{ post.excerpt | strip_html | truncate: 150 }}
+            </p>
+            {% endif %}
+          </div>
+
+          <div class="flex-shrink-0">
+            <span class="inline-flex items-center gap-1 text-xs font-medium text-violet-400/70
+                         group-hover:text-violet-300 group-hover:gap-2 transition-all duration-200">
+              Read
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    {% if paginator.total_pages > 1 %}
+    <nav class="flex items-center justify-center gap-3 mt-12" aria-label="Pagination">
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}"
+         class="flex items-center gap-1.5 px-4 py-2 text-sm text-slate-400
+                hover:text-slate-200 border border-slate-700 hover:border-slate-600
+                rounded-lg transition-all duration-200">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Newer
+      </a>
+      {% endif %}
+      <span class="text-sm text-slate-600 px-2">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | prepend: site.baseurl }}"
+         class="flex items-center gap-1.5 px-4 py-2 text-sm text-slate-400
+                hover:text-slate-200 border border-slate-700 hover:border-slate-600
+                rounded-lg transition-all duration-200">
+        Older
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+      {% endif %}
+    </nav>
+    {% endif %}
+
+    {% else %}
+    <div class="py-20 text-center animate-fade-in">
+      <p class="text-slate-600 text-sm">No posts yet — check back soon.</p>
+    </div>
+    {% endif %}
+
+  </section>
+</div>

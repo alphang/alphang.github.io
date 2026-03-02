@@ -4,10 +4,6 @@ description: Software developer and technical writer based in Vancouver, Canada.
 baseurl: ""
 url: "http://alphang.com"
 
-# Theme
-theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "dark"
-
 # Build settings
 markdown: kramdown
 highlighter: rouge
@@ -19,7 +15,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jekyll-include-cache
   - jekyll-octicons
 
 # Pagination
@@ -34,10 +29,8 @@ author:
   avatar: "/assets/brick-road-alpha.jpg"
   links:
     - label: "GitHub"
-      icon: "fab fa-fw fa-github"
       url: "https://github.com/alphang"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/alphang"
 
 # Defaults
@@ -46,16 +39,12 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      share: false
+      layout: post
   - scope:
       path: ""
       type: pages
     values:
-      layout: single
-      author_profile: true
+      layout: page
 
 exclude:
   - CLAUDE.md
